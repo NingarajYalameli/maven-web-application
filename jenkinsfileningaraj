@@ -9,8 +9,7 @@ node{
     echo "This is jenkins url: ${env.BRANCH_NAME} "
 
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
-    properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
-
+    
     //code checkout
     stage('CheckoutCode'){
         git branch: 'development', credentialsId: 'd831d652-2f27-43e5-83e6-5e20db10013c', url: 'https://github.com/NingarajYalameli/maven-web-application.git'
