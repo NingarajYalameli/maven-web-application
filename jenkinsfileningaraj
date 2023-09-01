@@ -69,7 +69,7 @@ buildDescription 'Pipeline Script - Scriptedway'
     }
     }
 */
-}try block closing
+}//try block closing
 catch(e) {
  currentBuild.result = "FAILED"
 }
