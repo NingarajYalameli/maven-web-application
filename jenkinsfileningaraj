@@ -44,6 +44,7 @@ buildDescription 'Pipeline Script - Scriptedway'
    try{
     //code checkout
     stage('CheckoutCode'){
+        sendSlackNotifications('STARTED')
         git branch: 'development', credentialsId: 'd831d652-2f27-43e5-83e6-5e20db10013c', url: 'https://github.com/NingarajYalameli/maven-web-application.git'
     }  
     
